@@ -20,10 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-3*4eg-y3%8)7axd9pp$%6b@oz!x7$kk+)cdnt9-y@$ps8aalf'
+# SECRET_KEY = '-3*4eg-y3%8)7axd9pp$%6b@oz!x7$kk+)cdnt9-y@$ps8aalf'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','-3*4eg-y3%8)7axd9pp$%6b@oz!x7$kk+)cdnt9-y@$ps8aalf')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG',True))
 
 ALLOWED_HOSTS = []
 
@@ -123,7 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'portfolio', 'static')
+    os.path.join(BASE_DIR, 'portfolio', 'static'),
+    os.path.join(BASE_DIR, 'blogprojectapp', 'static')
 ] # 현재 static 파일들이 어디에 위치하는지 쓰는곳 portfolio앱 안에 static이라는 폴더에 추가.
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
