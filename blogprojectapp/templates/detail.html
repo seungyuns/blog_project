@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+
+
+{%block contents %}
+
+<body>      
+  <br><br>
+    <div class="container">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-header">Blog</div>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{sss.pub_date}}</h6>
+            <h5 class="card-title">{{sss.title}}</h5>
+            <p class="card-text">{{sss.body}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+
+<!--
+        <div class="container">
+            <글 내용>
+                <div class="card" >
+                        <div class="card-body">
+                          <h2 class="card-title">{{sss.title}}</h2>
+                          <h6 class="card-subtitle mb-2 text-muted">{{sss.pub_date}}</h6>
+                          <p class="card-text">{{sss.body}}</p>
+                        </div>
+                      </div>
+                </div><br> 
+              --> 
+</body>
+
+{%endblock%}

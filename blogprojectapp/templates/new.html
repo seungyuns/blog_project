@@ -1,0 +1,17 @@
+{%extends 'base.html' %}
+
+{%block contents%}
+<br>
+
+<div class = "container">
+    <form method="POST">
+        {%csrf_token%}
+        <table>
+            {{form.as_table}}  <!-- 만든 폼을 찍어서 보여준다. as_<형태> table형태로 찍어 보여준다.-->
+        </table>
+        <br>
+        <input class ="btn btn-dark" type="submit" value="제출하기">
+    </form>
+</div>
+
+{%endblock%}
